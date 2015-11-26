@@ -3,18 +3,19 @@
 // L.esri.basemapLayer("Topographic").addTo(map);
 
 var shpwrite = require('shp-write');
+var fs = require('fs');
 
-// (optional) set names for feature types and zipped folder
+// set names for feature types and the zipped folder
 var options = {
-    folder: 'myshapes',
+    folder: 'shapesfiles',
     types: {
-        point: 'mypoints',
-        line: 'mylines'
+        point: 'points',
+        line: 'polylines'
     }
 }
 
-// hard-coding the data in this page for now
-shpwrite.download({
+// hard-coding the data for now
+var geoj = {
     type: 'FeatureCollection',
     features: [
         {
@@ -38,5 +39,12 @@ shpwrite.download({
             }
         }
     ]
-}, options); // triggers a download of a zip file with shapefiles contained within.
+};
 
+// We make an <a download="shapes.zip" ... > because some browsers will
+// honor the given filename, http://stackoverflow.com/a/16523173/23566
+var content = shpwrite.zip(geoj, options);
+var link = document.createElement('a');
+link.download = "shapes.zip";
+link.href = 'data:application/zip;base64,' + content;
+link.click();
