@@ -1,0 +1,29 @@
+{
+  "name": "shapefiler",
+  "version": "0.1.0",
+  "description": "A demo showing how to export Esri JSON features as a shapefile.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robert-claypool/shapefiler.git"
+  },
+  "keywords": [
+    "shapefile",
+    "esrijson",
+    "geojson",
+    "gis"
+  ],
+  "author": "Robert Claypool",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robert-claypool/shapefiler/issues"
+  },
+  "homepage": "https://github.com/robert-claypool/shapefiler#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-html5-lint": "^1.1.0"
+  }
+}

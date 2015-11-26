@@ -1,0 +1,19 @@
+body {
+    margin: 2em;
+    font-family: 'Source Sans Pro', 'HelveticaNeue', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+#noscript-warning {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    background-color: #a94442;
+    padding: 5px 0 5px 0;
+}
+
+#noscript-padding {
+    padding-top: 2em;
+}
