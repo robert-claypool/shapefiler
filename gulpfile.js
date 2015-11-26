@@ -1,4 +1,7 @@
+'use strict';
+
 var gulp = require('gulp');
+var browserify = require('browserify');
 var html5Lint = require('gulp-html5-lint');
 
 gulp.task('html5-lint', function() {

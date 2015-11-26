@@ -25,5 +25,8 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-html5-lint": "^1.1.0"
+  },
+  "dependencies": {
+    "shp-write": "^0.2.4"
   }
 }
