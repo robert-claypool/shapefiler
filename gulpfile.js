@@ -10,24 +10,24 @@ var sourcemaps = require('gulp-sourcemaps');
 var gutil = require('gulp-util');
 
 gulp.task('html5-lint', function() {
-    return gulp.src('*.html')
-        .pipe(html5Lint());
+  return gulp.src('*.html')
+    .pipe(html5Lint());
 });
 
 gulp.task('js', function() {
-    var b = browserify({
-        entries: './app.js',
-        debug: true
-    });
+  var b = browserify({
+    entries: './app.js',
+    debug: true
+  });
 
-    return b.bundle()
-    .pipe(source('app.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-    // .pipe(uglify())
-    .on('error', gutil.log)
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./dist/js/'));
+  return b.bundle()
+  .pipe(source('app.js'))
+  .pipe(buffer())
+  .pipe(sourcemaps.init({loadMaps: true}))
+  // .pipe(uglify())
+  .on('error', gutil.log)
+  .pipe(sourcemaps.write('./'))
+  .pipe(gulp.dest('./dist/js/'));
 });
 
 gulp.task('default', ['html5-lint', 'js']);
